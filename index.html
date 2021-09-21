@@ -494,12 +494,12 @@
                                 <td class="friday">
                                   <div class="btn-group">
                                     <!-- Teacher 1 -->
-                                    <div class="vert-group">
+                                    <div class="vert-group shweta">
                                       <a class="btn btn-info btn-sm" href="https://us02web.zoom.us/j/89095897936?pwd=UXJOdGl3YXZHOTJOWlhYeE9kOGEvQT09" target="_blank"">S20</a>
                                       <div class="shweta">Shweta</div>
                                     </div>
                                     <!-- Teacher 2 -->
-                                    <div class="vert-group">
+                                    <div class="vert-group swathi">
                                       <a class="btn btn-secondary btn-sm" href="https://us02web.zoom.us/j/83080516457?pwd=aVBLUng1RG5oV0Uza2V1dVRDRWcrUT09" target="_blank"">S18</a>
                                       <div class="swathi">Swathi</div>  
                                       <div class="between">5:15</div>                                      
@@ -620,7 +620,7 @@
             </div>  
   <script>
       function filterByTeacher() {
-        var input, filter, table, tr, td, i, j, k, txtValue, ts;
+        var input, filter, table, tr, td, i, j, k, txtValue, ts, btnGrp, vertGrp;
         input = document.getElementById("mylist");
         filter = input.value.toUpperCase();
 
@@ -640,7 +640,20 @@
               txtValue = td.textContent || td.innerText;
               if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 found = 1;
+                            
               }
+              //Check if td contains teacher vertical group other than selected
+              /*btnGrp = td.getElementsByClassName("btn-group")[0];
+              if (btnGrp) {
+                vertGrp = btnGrp.getElementsByClassName("vert-group");
+                if (vertGrp) {   
+                  for (i = 0; i < vertGrp.length; i++) {
+                    if (vertGrp[i].class != filter) {
+                      vertGrp[0].style.display = "none";
+                    }
+                  }
+                }  
+              }*/ 
             } 
           }
           if (found == 1) {
